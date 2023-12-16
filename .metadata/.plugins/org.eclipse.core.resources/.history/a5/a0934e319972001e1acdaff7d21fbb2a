@@ -1,0 +1,18 @@
+package com.javapractice.colections;
+
+import java.util.LinkedList;
+
+public class ListedListPr {
+
+	public static void main(String[] args) {
+		LinkedList<Integer> ll=new LinkedList<>();
+		ll.add(2);
+		ll.add(3);
+		ll.add(4);
+		ll.set(2, 6);
+		
+		System.out.println(ll);
+
+	}
+
+}

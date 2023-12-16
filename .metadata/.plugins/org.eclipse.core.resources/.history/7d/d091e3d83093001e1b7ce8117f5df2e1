@@ -1,0 +1,5 @@
+package com.springgboot.project3.bean;
+
+public class Customer {
+
+}

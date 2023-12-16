@@ -1,0 +1,46 @@
+package Day4_PracticeSelenium;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class EkartWebsitePractice {
+
+	private static final String Brocolli = null;
+	private static final String Beetroot = null;
+	private static final String Tomato = null;
+
+	public static void main(String[] args) {
+System.setProperty("webdriver.chrome.driver", "D:\\#SeleniumLatest_30May23\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver driver;
+		
+		driver= new ChromeDriver();
+
+		driver.manage().window().maximize(); // use to maximize the window
+		
+		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+		String[] RequiredItems= {Brocolli,Beetroot,Tomato};
+		List<String> AllRequiredtem= Arrays.asList(RequiredItems);
+		int j=0;
+		
+		 
+		List<WebElement> ItemList= driver.findElements(By.xpath("//h4"));
+		for(int i=0;i<=ItemList.size(); i++) {
+			String names= ItemList.get(i).getText().split("-")[0].trim();
+			System.out.println(names);
+			
+			
+			if(names.contains((CharSequence) AllRequiredtem)) {
+				j++;
+				
+				driver.findElements(By.xpath("(//div[@class=\"product-action\"])/button")).click;
+			}
+		}
+	}
+
+}

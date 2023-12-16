@@ -1,0 +1,13 @@
+package com.javapractice.colections;
+
+import java.util.LinkedList;
+
+public class ListedListPr {
+
+	public static void main(String[] args) {
+		LinkedList<Integer> ll=new LinkedList<>();
+		
+
+	}
+
+}

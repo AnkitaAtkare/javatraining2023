@@ -1,0 +1,5 @@
+package com.springgboot.project4.bean;
+
+public class Product {
+
+}

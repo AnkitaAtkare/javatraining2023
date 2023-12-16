@@ -1,0 +1,10 @@
+package com.javapractice.array;
+
+
+
+public class InsertElementInArrayPr {
+public static void main(String[] args) {
+	Scanner  sc = new Scanner(System.in);
+	
+}
+}

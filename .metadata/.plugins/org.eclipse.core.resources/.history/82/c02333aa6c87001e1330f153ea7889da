@@ -1,0 +1,13 @@
+package JavaTraining;
+
+public class VariableEx {
+	static int  i = 10;// global variable
+
+	public static void main(String[] args) {
+      i=30;
+		int j = 20;
+		System.out.println(i + j);
+
+	}
+
+}

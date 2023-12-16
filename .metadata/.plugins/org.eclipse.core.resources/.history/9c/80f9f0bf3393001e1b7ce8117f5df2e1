@@ -1,0 +1,52 @@
+package com.springgboot.project3.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.springgboot.project3.bean.Customer;
+import com.springgboot.project3.dao.CustomerDao;
+@Service
+public class CustomerServiceImpl implements CustomerService{
+@Autowired
+CustomerDao customerdao;
+
+	@Override
+	public Customer addcustomer(Customer c) {
+		// TODO Auto-generated method stub
+		return customerdao.save(c);
+	}
+
+	@Override
+	public List<Customer> ggetcustomer() {
+		// TODO Auto-generated method stub
+		return customerdao.findAll();
+	}
+
+	@Override
+	public String deletecustomer(int custid) {
+		// TODO Auto-generated method stub
+		customerdao.deleteById(custid);
+		return "delete successfully";
+	}
+
+	@Override
+	public Customer updatecustomer(Customer c) {
+		// TODO Auto-generated method stub
+		Customer cu =customerdao.findById(c.getCustid()).orElse(null);
+		cu.setCustid(c.getCustid());
+		cu.setAddress(c.getAddress());
+		cu.setCust_name(c.getCust_name());
+		
+		return customerdao.save(cu) ;
+	}
+
+	@Override
+	public Optional<Customer> getbyidcustomer(int custid) {
+		// TODO Auto-generated method stub
+		return customerdao.findById(custid);
+	}
+
+}

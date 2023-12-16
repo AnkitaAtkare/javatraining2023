@@ -1,0 +1,10 @@
+package com.springgboot.project4.service;
+
+public interface ProductService {
+	public void addproduct();
+	public void getproduct();
+	public void deleteproduct();
+	public void updateproduct();
+	
+
+}

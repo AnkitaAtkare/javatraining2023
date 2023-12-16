@@ -1,0 +1,50 @@
+package com.springgboot.project4.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.springgboot.project4.bean.Product;
+import com.springgboot.project4.dao.ProductDao;
+@Service
+public class ProductServiceImpl implements ProductService {
+@Autowired
+ProductDao productdao;
+	@Override
+	public Product addproduct(Product p) {
+		// TODO Auto-generated method stub
+		return productdao.save(p);
+	}
+
+	@Override
+	public List<Product> getproduct() {
+		// TODO Auto-generated method stub
+		return productdao.findAll();
+	}
+
+	@Override
+	public String deleteproduct(int srno) {
+		// TODO Auto-generated method stub
+		productdao.deleteById(srno);
+		return "delete succesfully";
+	}
+
+	@Override
+	public Product updateproduct(Product p) {
+	
+		Product pr=productdao.findById(p.getSrno()).orElse(null);
+		pr.setPrice(p.getPrice());
+		pr.setProduct_name(p.getProduct_name());
+		pr.setSrno(p.getSrno());
+		
+		return productdao.save(pr);
+	}
+
+	@Override
+	public Optional<Product> updatebyidproduct(int srno) {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
+}

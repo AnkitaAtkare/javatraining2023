@@ -1,0 +1,16 @@
+package com.springgboot.project4.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.springgboot.project4.bean.Product;
+
+public interface ProductService {
+	public Product addproduct(Product p);
+	public List<Product> getproduct();
+	public Product deleteproduct(int srno);
+	public Product updateproduct(Product p);
+	public Optional<Product> updatebyidproduct(int srno);
+	
+
+}

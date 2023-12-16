@@ -1,0 +1,21 @@
+package com.spring.restapi.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+@Service
+public class RestService {
+	@Autowired
+	public final RestTemplate resttemplate;
+
+	public RestService(RestTemplate resttemplate) {
+		this.resttemplate = resttemplate;
+	}
+	public String getByDiffUrl() {
+		String url="http://localhost:8088/getemp";
+		String response=resttemplate.getForObject(url, String.class);
+		return response;
+		
+	}
+}

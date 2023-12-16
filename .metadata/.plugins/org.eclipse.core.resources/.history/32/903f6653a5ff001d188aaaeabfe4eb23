@@ -1,0 +1,34 @@
+package Trail;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class NewClass {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		System.out.println("This is first project");
+		System.setProperty("webdriver.chrome.driver", "D:\\#SeleniumLatest_30May23\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver driver;
+		driver=new ChromeDriver();
+		
+        driver.get("https://www.google.com/");
+        driver.manage().window().maximize();
+     
+        driver.navigate().to("file:///C:/Users/LENOVO/OneDrive/Desktop/testing%20notes/OfflineWebsite/index.html");
+        Thread.sleep(2000);
+        driver.navigate().refresh();
+        String URL= driver.getCurrentUrl();
+        System.out.println(URL);
+        
+//        Thread.sleep(2000);
+        
+		driver.quit();
+		
+		
+	}
+
+}

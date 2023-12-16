@@ -1,0 +1,16 @@
+package com.springgboot.project3.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.springgboot.project3.bean.Customer;
+
+public interface CustomerService {
+public Customer addcustomer(Customer c);
+public List<Customer> ggetcustomer();
+public String deletecustomer(int custid);
+public Customer updatecustomer(Customer c);
+public Optional<Customer> getbyidcustomer(int custid);
+
+
+}

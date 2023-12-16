@@ -1,0 +1,31 @@
+package Trail;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class NewClass {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		System.out.println("This is first project");
+		System.setProperty("webdriver.chrome.driver", "D:\\#SeleniumLatest_30May23\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver driver;
+		driver=new ChromeDriver();
+		
+        driver.get("file:///C:/Users/LENOVO/OneDrive/Desktop/testing%20notes/OfflineWebsite/index.html");
+        WebElement EmailTextBox = driver.findElement(By.xpath("//input[@id=\"email\"]"));
+        EmailTextBox.sendKeys("kiran@gmail.com);
+        
+       
+        Thread.sleep(2000); 
+        
+		driver.quit();
+		
+		
+	}
+
+}
